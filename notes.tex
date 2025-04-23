@@ -21,15 +21,19 @@
 	
 	
 	\section*{Overview}
-	This project aims to explore how two well-known machine learning paradigms -- \emph{finite automata} and \emph{neural network} learning -- can help improve and explain each other.
-	It is structured around  three complementary axes:
-	\begin{enumerate}
-		\item Using deep neural networks to improve automaton learning.
-		\item Using automata to improve deep neural network learning.
-		\item Using automata to improve our understanding of deep neural network mechanisms and behaviours.
-	\end{enumerate}
-	The first two axes combine into the development of an ecosystem of concrete and practical techniques to assist in one type of learning by applying idea from the other. 
-	As we will see, this ecosystem could allow us to create learning systems \emph{combining features of both automaton and deep neural network learning}, for instance machine learning systems guided by formal automata-theoretic constraints who are themselves learned with the help of Neural Networks. 
+	
+		In the summer 1951, the great American mathematician Stephen Kleene developed the fundamental notion of \emph{regular expression} to describe the class of events leading to a given state in a finite automaton ~\cite[Theorem 6]{kleene1951}. The latter is explicitly understood in \textit{op.cit.}\ as an abstraction and generalisation of a McCulloch-Pitts nerve net, a logical model of nervous activity which we would today describe as a kind of \emph{neural network}. The theory of automata, one of the pillars of formal methods in computer science, was thus born out of a desire to understand neural networks. The key role of Kleene's approach and motivation is reflected by the presence of a version of \textit{op.cit.}\ as the very first chapter of the 1956 \textit{Automata Studies}~\cite{ashby1956automata}, the volume that cemented automata theory as a discipline, along contributions from von Neumann, Shannon, Moore, Minsky, etc. 
+		
+		Automata and neural network theory have since followed diverging paths, leading to the establishment of largely disjoint research communities. Interestingly though, both of these paths have lead to the development of important supervised learning paradigms implemented by well-known algorithms ($L^\ast$ and stochastic gradient descent respectively). 		
+		This project aims to rekindle the connection between automata and neural networks, and specifically to explore how these two learning paradigms can help improve and explain each other.
+		Concretely, the project is structured around  three complementary axes:
+		\begin{enumerate}
+			\item Using deep neural networks to improve automaton learning.
+			\item Using automata to improve deep neural network learning.
+			\item Using automata to improve our understanding of deep neural network mechanisms and behaviours.
+		\end{enumerate}
+		The first two axes combine into the development of an ecosystem of concrete and practical techniques to assist in one type of learning by applying idea from the other. 
+		As we will see, this ecosystem could allow us to create learning systems \emph{combining features of both automaton and deep neural network learning}, for instance machine learning systems guided by formal automata-theoretic constraints who are themselves learned with the help of Neural Networks. 
 	
 	The last axis has a more fundamental and theoretical ambition: to use automata as a highly structured class of classification problems with which to investigate whether \emph{logical and compositional reasoning} can be (a) identified and (b) understood in various deep neural network architectures.
 	
