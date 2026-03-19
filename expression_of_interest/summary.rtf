@@ -1,29 +1,35 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2639
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\ftech\fcharset77 Symbol;\f2\froman\fcharset0 Times-Roman;
-}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww15640\viewh10740\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww16460\viewh10400\viewkind0
 \deftab720
 \pard\pardeftab720\partightenfactor0
 
 \f0\fs32 \cf2 \expnd0\expndtw0\kerning0
-Automata and neural networks (NN), two of the most important ideas in computer science, share a common origin in the work of 1950s pioneers like Kleene. They have since followed diverging paths, leading to the creation of disjoint research communities. However, both paths witnessed the development of important supervised learning paradigms implemented by well-known algorithms (L
-\f1 \uc0\u8727 
-\f0  and backpropagation respectively). This project aims to revive the connection between automata and NN, and in particular explore how their learning paradigms can help improve and explain each other, hence the title of the project. \
+Automata and neural networks (NN), two of the most important ideas in computer science, share a common origin in the 1950s. They have since evolved into virtually disjoint research communities, but both have given rise to important supervised learning paradigms powered by well-known algorithms (L
+\f1 *
+\f0  and backpropagation). This project will explore how these learning paradigms can improve and explain each other. \
 \'a0\
-At a high level, we want to transfer knowledge and methods from the automaton community to the deep neural network community and vice-versa. Concretely, we have identified specific questions for which we believe this transfer would be particularly beneficial and arranged them in two tracks: Track 1 will deal with application of NN to automaton learning, and Track 2 with the opposite direction.\
+At a high level, we want to transfer knowledge and methods from the automata theory community to the NN community and vice-versa. Concretely, we have identified specific questions for which we believe this transfer would be particularly beneficial. \
+\'a0\
+Track 1: NN for automaton learning\
+\'a0\
+Angluin\'92s famous L*-algorithm showed how to learn an unknown automaton, the System Under Learning or SUL, using (i) membership queries - testing if a string is accepted by the automaton - and (ii) equivalence queries - testing if the algorithm\'92s representation of the automaton is correct and return a counterexample if it isn\'92t. \
+\'a0\
+WP1: Learning Adapters with NNs.\
+L* suffers from problems of (i) scale \'96 the set of symbols is larger than necessary to learn important behaviours of the SUL \'96 and/or (ii) scope \'96 the SUL must be abstracted to be turned it into an automaton. Both problems are solved by learning an automaton over a smaller set of abstract symbols, but to query the SUL these need to be concretised into symbols it recognises. This task is performed by Adapters, hand-built concretising functions. We propose learning Adapters using transformers to greatly expand the scale and scope of problems solved by automaton learning.\
+\'a0\
+WP2: Learning Counterexamples with NNs.\
+The computational bottleneck of L* is the generation of counterexamples in equivalence queries. These cannot be performed exactly as the SUL is unknow, and they are therefore approximated by exhaustive counterexample search. We propose to train a NN on the fly to learn and propose candidate counterexamples. \
+\'a0\
+Track 2: Automata for NN learning\
+\'a0\
+WP3: Logical and modular structure of NNs \
+Automata form a set of classification problems: is a string accepted by an automaton or not? Uniquely, this set has a rich logical structure: one can consider the negation, intersection, union, etc. of automata. We want to determine how this logical structure gets encoded in NNs and what this tells us about modularity: can NNs solving complex tasks be constructed from NNs solving simpler ones?\
+\'a0\
+WP4: Automaton-guided NNs\
+Neurosymbolic AI is a set of methods combining NNs with formal methods to enforce formally specified behaviours. One such technique, used in reinforcement learning, uses weighted automata, called reward machines, to \'93guide\'94 the training of a NN policy. We believe that this idea is under-researched and propose to systematically explore how different choices of semi-rings (for the weights) and loss functions can be used to penalise \'93ungrammatical\'94 behaviours, e.g. for the generation of code with poor training data.\
 \'a0\
 \'a0\
-Track 1: \
-Angluin\'92s famous L
-\f2 *
-\f0 -algorithm showed how to learn an unknown automaton by asking (i) membership queries, testing if a string is accepted by the black-box automaton, and (ii) equivalence queries, testing if the algorithm\'92s current representation of the unknown automaton is equivalent to it. The Cornell pole of the project has unrivalled expertise in applying and extending this algorithm to an extremely wide variety of contexts and industrial applications. We want to solve two practical problems in implementing L*.\
-\'a0\
-WP1 \'96 Learning Adapters with NNs.\
-\'a0\
-\'a0\
-WP2 \'96 Learning Counterexamples with NNs\
-\'a0\
-Track 2:\
 }
